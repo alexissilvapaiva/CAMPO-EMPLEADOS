@@ -1,13 +1,25 @@
 ﻿using ConsoleApp1;
 
-Supervisor paula = new Supervisor("Paula", "Berghella", 0, "A", 18, 500000000, 115555555);
+Auto onix = new Auto("ABC123", "Chevrolet", "Onix");
 
-Supervisor luis = new Supervisor("Luis", "Blanco", 0, "A", 25, 10, 115555555);
+Auto focus = new Auto("ABC122", "Ford", "Focus");
+
+Secretario romeo = new Secretario("Romeo", "Santos", 0, "A", 25, 5, 115555555);
+
+Secretario leonardo = new Secretario("Leonardo", "Mattioli", 0, "A", 25, 5, 115555555);
+
+Supervisor paula = new Supervisor("Oficina", onix, romeo,"Paula", "Berghella", 0, "A", 18, 15, 115555555);
+
+Supervisor luis = new Supervisor("Oficina", focus, leonardo, "Luis", "Blanco", 0, "A", 25, 10, 115555555);
 
 Empleado eduardo = new Empleado(paula, "Eduardo", "Campagnola", 0, "A", 25, 1, 115555555);
 
-paula.incrementarSalario();
-Console.WriteLine(paula.presentarse());
-Console.WriteLine(eduardo.mostrarSupervisor());
+
+Console.WriteLine(eduardo.presentarse());
 eduardo.cambiarSupervisor(luis);
-Console.WriteLine(eduardo.mostrarSupervisor());
+eduardo.incrementarSalario();
+
+Console.WriteLine(paula.presentarse());
+paula.cambiarSecretario(leonardo);
+paula.cambiarAuto(focus);
+paula.incrementarSalario();

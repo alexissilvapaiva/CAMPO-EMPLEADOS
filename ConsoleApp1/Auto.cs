@@ -8,20 +8,20 @@ namespace ConsoleApp1
 {
     public class Auto
     {
-        private int matricula;
+        private string matricula;
         private string marca;
         private string modelo;
 
-        public Auto(int matricula, string marca, string modelo)
+        public Auto(string matricula, string marca, string modelo)
         {
             this.matricula = matricula;
             this.marca = marca;
             this.modelo = modelo;
         }
 
-        public string mostrarModelo()
+        public string getDatosAuto()
         {
-            return this.modelo;
+            return this.marca + " " + this.modelo + ". Matrícula: " + this.matricula;
         }
     }
 }

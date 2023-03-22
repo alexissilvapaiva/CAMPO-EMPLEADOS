@@ -8,8 +8,8 @@ namespace ConsoleApp1
 {
     public abstract class Persona 
     {
-        private string nombre;
-        private string apellido;
+        protected string nombre;
+        protected string apellido;
         private int dni;
         private string direccion;
         private int edad;
@@ -31,6 +31,11 @@ namespace ConsoleApp1
         public string presentarse()
         {
             return "Mi nombre es " + this.nombre + " " + this.apellido;
+        }
+
+        public string getNombre()
+        {
+            return this.nombre + " " + this.apellido;
         }
 
         public virtual void incrementarSalario()

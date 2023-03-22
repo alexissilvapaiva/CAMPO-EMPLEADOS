@@ -18,7 +18,9 @@ namespace ConsoleApp1
 
         public override void incrementarSalario()
         {
+            double salarioAnterior = this.salario;
             this.salario *= 1.1;
+            Console.WriteLine("El salario de " + this.nombre + " " + this.apellido + " se aumentó un 10%. Salario anterior: $" + salarioAnterior + ". Nuevo salario: $" + this.salario);
         }
 
         public double mostrarSalario()
@@ -28,12 +30,14 @@ namespace ConsoleApp1
 
         public void cambiarSupervisor(Supervisor supervisor)
         {
+            Supervisor supervisorAnterior = this.supervisor;
             this.supervisor = supervisor;
+            Console.WriteLine( this.nombre + " " + this.apellido + " cambió de supervisor. Supervisor anterior: " + supervisorAnterior.getNombre() + ". Nuevo supervisor: " + this.supervisor.getNombre() + ".");
         }
 
         public string mostrarSupervisor()
         {
-             return this.supervisor.presentarse();
+             return "Mi supervisor es: " + this.supervisor.getNombre();
         }
     }
 }
