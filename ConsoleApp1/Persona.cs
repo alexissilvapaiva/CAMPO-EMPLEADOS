@@ -12,12 +12,13 @@ namespace ConsoleApp1
         protected string apellido;
         private int dni;
         private string direccion;
-        private int edad;
+        protected int edad;
         protected double salario;
         private int telefono;
+        protected int aniosDeAntiguedad;
 
 
-        public Persona(string nombre, string apellido, int dni, string direccion, int edad, double salario, int telefono)
+        public Persona(int aniosDeAntiguedad, string nombre, string apellido, int dni, string direccion, int edad, double salario, int telefono)
         {
             this.nombre = nombre;
             this.direccion = direccion;
@@ -26,6 +27,7 @@ namespace ConsoleApp1
             this.dni = dni;
             this.telefono = telefono;
             this.apellido = apellido;
+            this.aniosDeAntiguedad = aniosDeAntiguedad;
         }
 
         public string presentarse()

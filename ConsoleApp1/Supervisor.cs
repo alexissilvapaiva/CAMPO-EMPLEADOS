@@ -11,8 +11,9 @@ namespace ConsoleApp1
         private string despacho;
         private Secretario secretario;
         private Auto auto;
+        private List<Empleado> listaDeEmpleado = new List<Empleado>();
 
-        public Supervisor(string despacho, Auto auto, Secretario secretario, string nombre, string apellido, int dni, string direccion, int edad, double salario, int telefono) : base(nombre, apellido, dni, direccion, edad, salario, telefono)
+        public Supervisor(int aniosDeAntiguedad, string despacho, Auto auto, Secretario secretario, string nombre, string apellido, int dni, string direccion, int edad, double salario, int telefono) : base(aniosDeAntiguedad, nombre, apellido, dni, direccion, edad, salario, telefono)
 
         {
             this.secretario = secretario;
@@ -33,6 +34,17 @@ namespace ConsoleApp1
         public double mostrarSalario()
         {
             return this.salario;
+        }
+
+       /* public int contarEmpleados()
+        {
+            int cantidadDeEmpleados = 
+        }*/
+
+        public void agregarEmpleado(Empleado empleado)
+        {
+            this.listaDeEmpleado.Add(empleado);
+            Console.WriteLine("Se agregó el empleado: " + empleado.getNombre);
         }
 
         public void cambiarAuto(Auto auto)
