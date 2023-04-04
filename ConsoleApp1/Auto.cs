@@ -23,5 +23,9 @@ namespace ConsoleApp1
         {
             return this.marca + " " + this.modelo + ". Matrícula: " + this.matricula;
         }
+
+        public string getMatricula() {
+            return this.matricula;
+        }
     }
 }

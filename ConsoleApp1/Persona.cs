@@ -10,7 +10,7 @@ namespace ConsoleApp1
     {
         protected string nombre;
         protected string apellido;
-        private int dni;
+        protected int dni;
         private string direccion;
         protected int edad;
         protected double salario;
@@ -40,9 +40,24 @@ namespace ConsoleApp1
             return this.nombre + " " + this.apellido;
         }
 
+        public double getSalario()
+        {
+            return this.salario;
+        }
+
+        public int getDni()
+        {
+            return this.dni;
+        }
+
         public virtual void incrementarSalario()
         {
             this.salario *= 1;
+        }
+
+        public string mensajeAumentoDeSalario(string nombre, string apellido, double salarioAnterior, double salarioActual, double aumento)
+        {
+            return "El salario de " + nombre + " " + apellido + " se aumentó un " + Math.Round(aumento) + "%. Salario anterior: $" + salarioAnterior + ". Nuevo salario: $" + String.Format("{0:.##}", salarioActual);
         }
 
     }
